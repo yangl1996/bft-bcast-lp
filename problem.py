@@ -20,10 +20,10 @@ edgeCapVars = pl.LpVariable.dicts("EdgeCap", (nodes, nodes), lowBound=0)
 # min over max flows from leader to each follower
 minMaxFlowVar = pl.LpVariable("MinMaxFlow", lowBound=0)
 
-prob = pl.LpProblem("BftBcast", pl.LpMaximize)
+prob = pl.LpProblem("BftBcast", pl.LpMinimize)
 
 # objective
-prob += (minMaxFlowVar, "NCThroughput")
+prob += (-minMaxFlowVar, "NCThroughput")
 
 # no loopback
 for d in dests:
