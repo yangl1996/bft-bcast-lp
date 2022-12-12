@@ -1,0 +1,2 @@
+To produce MPS file, run python3 problem.py. Then solve the LP described by the
+MPS using any compatible LP solver.
