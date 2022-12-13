@@ -54,6 +54,6 @@ for n in nodes:
 
 # definition of minMaxFlow
 for d in dests:
-    prob += (pl.lpSum([flowEdgeVars[d][0][i] for i in nodes]) - minMaxFlowVar >= 0, f"MinMaxNoGreaterThanFlow{d}")
+    prob += (pl.lpSum([flowEdgeVars[d][0][i] for i in nodes]) - pl.lpSum([flowEdgeVars[d][i][0] for i in nodes]) - minMaxFlowVar >= 0, f"MinMaxNoGreaterThanFlow{d}")
 
 prob.writeMPS("throughput.mps")

@@ -1,8 +1,10 @@
-To produce MPS file, run python3 problem.py. Then solve the LP described by the
-MPS using any compatible LP solver.
+To produce MPS file that describes the LP, run python3 problem.py. Then solve
+the LP using any compatible LP solver.
 
 MPS does not encode the direction of the optimization. (The python script,
 specifically the PuLP library, does output the direction as a comment in the
 first line.) The python script generates the MPS file as a minimization problem.
 It is important to make sure the solver is configured to perform minimization.
 This is the behavior of CLP 1.17.7.
+
+Python depenencies: pulp.
