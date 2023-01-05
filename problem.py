@@ -1,8 +1,8 @@
 import pulp as pl
 
 # the first node is the leader
-ingress = [10.0, 10.0, 10.0, 10.0]
-egress = [10.0, 10.0, 10.0, 10.0]
+ingress = [10.0, 100.0, 100.0, 100.0]
+egress = [100.0, 200.0, 100.0, 10.0]
 
 if len(ingress) != len(egress):
     print("ingress and egress constraints do not match")
